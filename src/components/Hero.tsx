@@ -31,7 +31,8 @@ export default function Hero({
   return (
     <section
       aria-label="Introduction"
-      className="flex h-dvh w-full flex-col overflow-hidden bg-gray-100 dark:bg-gray-950 md:flex-row md:items-center"
+      className="flex h-dvh w-full flex-col overflow-hidden md:flex-row md:items-center"
+      // className="flex h-dvh w-full flex-col overflow-hidden bg-gray-100 dark:bg-gray-950 md:flex-row md:items-center"
     >
       {/* Text block: centered on mobile, left-aligned on desktop */}
       <div className="flex flex-none flex-col items-center px-6 pt-20 text-center md:w-1/2 md:items-start md:px-16 md:pt-0 md:text-left">
