@@ -49,10 +49,10 @@ function SkillsContent({ roleKey }: { roleKey: string }) {
   const open = picked === 'none' ? null : picked && visible.includes(picked) ? picked : visible[0]
 
   return (
-    <div className="mx-auto flex h-dvh w-full max-w-xl flex-col px-6 pb-6 pr-10 pt-8 text-left sm:pr-6">
+    <div className="mx-auto flex h-dvh w-full max-w-xl flex-col px-6 pb-6 pr-10 pt-10 text-left sm:pr-6">
       {/* Zone 1: header + company dropdown (top) */}
       <div className="shrink-0">
-        <h2 id="work-title" className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">Skills</h2>
+        <h2 id="work-title" className="text-3xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">What I Bring</h2>
         <p className="mt-2 opacity-70">Technologies I've used to build and maintain software.</p>
 
         <div className="mt-6">

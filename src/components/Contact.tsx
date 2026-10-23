@@ -43,7 +43,7 @@ export default function ContactPanel() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center max-md:px-11">
         <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">
           Let’s <span className="text-teal-400">Connect</span>
         </h2>
