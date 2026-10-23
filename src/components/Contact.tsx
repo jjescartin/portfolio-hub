@@ -35,41 +35,42 @@ export default function ContactPanel() {
   return (
     <section
       id="contact"
-      className="relative flex h-full min-h-screen flex-col overflow-hidden bg-neutral-950 text-neutral-100"
+      className="relative flex h-full min-h-screen w-full flex-col overflow-hidden bg-neutral-950 text-neutral-100"
     >
-      {/* soft accent glow so the dark bg ties back to the rest of the hub */}
+      {/* soft accent glow so the dark bg ties back to the rest of the hub (wider on desktop) */}
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(45,212,191,0.12),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(45,212,191,0.12),transparent_60%)] md:bg-[radial-gradient(ellipse_90%_60%_at_50%_0%,rgba(45,212,191,0.14),transparent_70%)]"
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center max-md:px-11">
-        <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-12 text-center max-md:px-11 md:pt-16">
+        <h2 className="text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
           Let’s <span className="text-teal-400">Connect</span>
         </h2>
 
-        <p className="mt-4 max-w-md text-base text-neutral-400 sm:text-lg">
+        <p className="mt-4 max-w-md text-base text-neutral-400 sm:text-lg md:mt-6 md:max-w-xl md:text-xl">
           Whether you’re looking for a developer to join your team or someone to help bring a
           project to life, I’d be happy to connect.
         </p>
 
-        <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+        <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:mt-10 md:gap-4">
           <a
             href={MAILTO}
-            className="rounded-full bg-teal-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-teal-300"
+            className="rounded-full bg-teal-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-teal-300 md:px-8 md:py-4 md:text-lg"
           >
             Email me
           </a>
           <a
             href={CV_URL}
             download
-            className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:border-teal-400 hover:text-teal-400"
+            className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:border-teal-400 hover:text-teal-400 md:px-8 md:py-4 md:text-lg"
           >
             Download CV
           </a>
         </div>
 
-        <div className="mt-8 flex gap-4">
+        {/* Socials: circles on mobile, labeled pills on desktop */}
+        <div className="mt-8 flex gap-4 md:mt-10">
           {socials.map(({ label, href, Icon }) => (
             <a
               key={label}
@@ -77,17 +78,21 @@ export default function ContactPanel() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 text-neutral-300 transition hover:border-teal-400 hover:text-teal-400"
+              className="flex h-12 w-12 items-center justify-center gap-2 rounded-full border border-white/15 text-neutral-300 transition hover:border-teal-400 hover:text-teal-400 md:w-auto md:px-5"
             >
               <Icon />
+              <span className="hidden text-sm font-medium md:inline">{label}</span>
             </a>
           ))}
         </div>
       </div>
 
       <footer className="relative z-10 border-t border-white/10 px-6 py-5 text-center text-xs text-neutral-500">
-        <Wordmark />
-        <p className="mt-2">Designed and built by yours truly</p>
+        {/* Wordmark is already in the nav bar on desktop */}
+        <div className="md:hidden">
+          <Wordmark />
+        </div>
+        <p className="mt-2 md:mt-0">Designed and built by yours truly</p>
         <p className="mt-1">
           React · TypeScript · Vite · Tailwind CSS · Crafted in VS Code with Claude
         </p>

@@ -20,9 +20,13 @@ export default function Nav({ current, onSelect }: NavProps) {
   const linkIdle = dark
     ? "text-white/60 hover:text-white"
     : "text-gray-900/60 hover:text-gray-900 dark:text-white/60 dark:hover:text-white"
+  const bar = dark
+    ? "bg-neutral-900/90 shadow-lg shadow-black/40"
+    : "bg-white/90 shadow-sm shadow-gray-900/10 dark:bg-gray-900/90 dark:shadow-black/40"
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-100 flex h-12 items-center justify-between px-5 md:h-20 md:px-16 lg:px-24">
+    <header
+  className={`${fade} pointer-events-none fixed inset-x-0 top-0 z-100 flex h-12 items-center justify-between px-5 backdrop-blur-md md:h-16 md:px-16 lg:px-24 ${bar}`}>
       <button
         type="button"
         onClick={() => onSelect(0)}
