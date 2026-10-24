@@ -6,6 +6,41 @@ import { useRoleKey } from '../hooks/useRoles'
 
 const LABELS: Record<Category, string> = { backend: 'Backend', frontend: 'Frontend', tools: 'Tools' }
 
+function CategoryIcon({ cat }: { cat: Category }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`size-5 shrink-0 ${ICON_STYLES[cat]}`}
+    >
+      {cat === 'backend' && (
+        <>
+          <rect x="3" y="3" width="18" height="7" rx="2" />
+          <rect x="3" y="14" width="18" height="7" rx="2" />
+          <path d="M7 6.5h.01" />
+          <path d="M7 17.5h.01" />
+        </>
+      )}
+      {cat === 'frontend' && (
+        <>
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="M3 9h18" />
+          <path d="M6.5 6.5h.01" />
+          <path d="M9.5 6.5h.01" />
+        </>
+      )}
+      {cat === 'tools' && (
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      )}
+    </svg>
+  )
+}
+
 const CATEGORY_OF: Record<string, Category> = {}
 for (const c of COMPANIES) {
   for (const cat of Object.keys(c.skills) as Category[]) {
@@ -15,11 +50,18 @@ for (const c of COMPANIES) {
 
 // Full class names, so Tailwind can see them
 const TAG_STYLES: Record<Category, string> = {
-  backend: 'border-sky-500/50 bg-sky-500/15',
-  frontend: 'border-violet-500/50 bg-violet-500/15',
+  backend: 'border-violet-500/50 bg-violet-500/15',
+  frontend: 'border-rose-500/50 bg-rose-500/15',
   tools: 'border-amber-500/50 bg-amber-500/15',
 }
+
 const TAG_DEFAULT = 'border-current/25'
+
+const ICON_STYLES: Record<Category, string> = {
+  backend: 'text-violet-600 dark:text-violet-400',
+  frontend: 'text-rose-600 dark:text-rose-400',
+  tools: 'text-amber-700 dark:text-amber-400',
+}
 
 // Matches Tailwind's `md` breakpoint (the nav bar and the other panels switch here too)
 const DESKTOP_QUERY = '(min-width: 768px)'
@@ -109,7 +151,10 @@ function SkillsContent({ roleKey }: { roleKey: string }) {
           return (
             <div key={cat} className={`rounded-lg border ${i === 0 ? 'border-emerald-500/60' : 'border-current/15'}`}>
               {isDesktop ? (
-                <div className="px-5 py-4 text-lg font-semibold">{LABELS[cat]}</div>
+                <div className="flex items-center gap-2 px-5 py-4 text-lg font-semibold">
+                  <CategoryIcon cat={cat} />
+                  {LABELS[cat]}
+                </div>
               ) : (
                 <button
                   type="button"
@@ -117,7 +162,10 @@ function SkillsContent({ roleKey }: { roleKey: string }) {
                   onClick={() => setPicked(open === cat ? 'none' : cat)}
                   className="flex w-full items-center justify-between px-4 py-3 font-semibold"
                 >
-                  {LABELS[cat]}
+                  <span className="flex items-center gap-2">
+                    <CategoryIcon cat={cat} />
+                    {LABELS[cat]}
+                  </span>
                   <span aria-hidden className="opacity-50">{expanded ? '−' : '+'}</span>
                 </button>
               )}

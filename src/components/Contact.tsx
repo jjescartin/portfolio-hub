@@ -18,6 +18,39 @@ const LinkedInIcon = () => (
   </svg>
 )
 
+const EnvelopeIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-5 shrink-0"
+    aria-hidden="true"
+  >
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m3 7 9 6 9-6" />
+  </svg>
+)
+
+const DownloadIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-5 shrink-0"
+    aria-hidden="true"
+  >
+    <path d="M12 3v12" />
+    <path d="m7 10 5 5 5-5" />
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  </svg>
+)
+
 // Needs the Space Grotesk (700) Google Font link in index.html
 const Wordmark = () => (
   <span className="font-['Space_Grotesk'] text-2xl font-bold tracking-tight">
@@ -56,15 +89,17 @@ export default function ContactPanel() {
         <div className="mt-8 flex w-full max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:mt-10 md:gap-4">
           <a
             href={MAILTO}
-            className="rounded-full bg-teal-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-teal-300 md:px-8 md:py-4 md:text-lg"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-400 px-6 py-3 font-semibold text-neutral-950 transition hover:bg-teal-300 md:px-8 md:py-4 md:text-lg"
           >
-            Email me
+            <EnvelopeIcon />
+            Contact me
           </a>
           <a
             href={CV_URL}
             download
-            className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:border-teal-400 hover:text-teal-400 md:px-8 md:py-4 md:text-lg"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:border-teal-400 hover:text-teal-400 md:px-8 md:py-4 md:text-lg"
           >
+            <DownloadIcon />
             Download CV
           </a>
         </div>

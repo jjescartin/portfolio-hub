@@ -5,6 +5,7 @@ type Project = {
   subtitle: string;
   description: string;
   stack: string[];
+  caseStudyUrl: string;
   demoUrl: string;
   githubUrl: string;
   screenshot?: string;
@@ -17,6 +18,7 @@ const projects: Project[] = [
     description:
       "A task management application built with Laravel, React, and TypeScript.",
     stack: ["Laravel", "React", "TypeScript", "SQLite", "Tailwind CSS"],
+    caseStudyUrl: "https://github.com/jjescartin/ESCend/blob/main/CASE_STUDY.md",
     demoUrl: "https://escend.onrender.com/", // TODO: live demo URL
     githubUrl: "https://github.com/jjescartin/ESCend", // TODO: GitHub repo URL
     screenshot: "/ESC.jpg", // TODO: e.g. "/escend-mobile.png" (put the image in /public)
@@ -152,13 +154,15 @@ export default function ProjectsPanel() {
 
             {/* Buttons: stacked on mobile, one row on desktop (end of the Z, bottom-left of the text) */}
             <div className="flex flex-col gap-2 pt-2 md:flex-row md:flex-wrap md:items-center md:gap-3 md:pt-3">
-              <button
-                type="button"
+              <a
+                href={project.caseStudyUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-400 md:px-6 md:py-3 md:text-base"
               >
                 <DocIcon />
                 View Case Study
-              </button>
+              </a>
               <div className="grid grid-cols-2 gap-2 md:contents">
                 <a
                   href={project.demoUrl}

@@ -16,7 +16,7 @@ export default function Nav({ current, onSelect }: NavProps) {
 
   const allen = dark ? "text-white" : "text-gray-900 dark:text-white"
   const esc = dark ? "text-teal-400" : "text-teal-700 dark:text-teal-400"
-  const linkActive = dark ? "text-teal-400" : "text-teal-700 dark:text-teal-400"
+  const linkActive = dark ? "text-teal-400 bg-gray-700" : "text-teal-700 dark:text-teal-400 bg-gray-200"
   const linkIdle = dark
     ? "text-white/60 hover:text-white"
     : "text-gray-900/60 hover:text-gray-900 dark:text-white/60 dark:hover:text-white"
@@ -37,7 +37,7 @@ export default function Nav({ current, onSelect }: NavProps) {
         <span className={`${esc} ${fade}`}>ESC</span>
       </button>
 
-      <nav aria-label="Primary" className="pointer-events-auto hidden gap-8 md:flex">
+      <nav aria-label="Primary" className="pointer-events-auto hidden md:flex h-full">
         {SECTIONS.slice(1).map((section, i) => {
           const index = i + 1
           const active = current === index
@@ -47,7 +47,7 @@ export default function Nav({ current, onSelect }: NavProps) {
               type="button"
               onClick={() => onSelect(index)}
               aria-current={active ? "page" : undefined}
-              className={`${fade} cursor-pointer text-base font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-500 ${
+              className={`${fade} cursor-pointer text-base font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-500 px-4 ${
                 active ? linkActive : linkIdle
               }`}
             >
