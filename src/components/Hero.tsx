@@ -42,7 +42,7 @@ const LinkedinIcon = () => (
 );
 
 export default function Hero({
-  photoSrc = "/allen_croped.webp",
+  photoSrc = "/allen_hero.webp",
   cvHref = "/Joallen_Escartin_Resume.pdf",
   email = "joallen.escartin@gmail.com",
   githubHref = "https://github.com/jjescartin",
@@ -174,10 +174,10 @@ export default function Hero({
 
       {/* Photo area: takes the remaining height so it never collides with text */}
       <div className="relative min-h-[280px] w-full flex-1 md:h-full md:w-1/2 md:flex-none">
-        {/* Arch frame (decorative); shifted slightly left on desktop to clear the dot nav */}
+        {/* Circle frame (decorative), centred on the chest so the head breaks out the top; shifted left on desktop to clear the dot nav */}
         <div
           aria-hidden="true"
-          className={`${archFill} absolute bottom-0 left-1/2 h-[80%] w-[94%] max-w-[26rem] -translate-x-1/2 rounded-t-full md:left-[calc(50%-1.5rem)] md:h-[70%] md:max-w-[26rem]`}
+          className={`${archFill} absolute left-1/2 top-[22%] aspect-square h-[68%] -translate-x-1/2 rounded-full md:left-[calc(50%-1.5rem)] md:top-[30%] md:h-[60%]`}
         />
         {/* Cutout: taller than the arch so the head breaks out of the top */}
         <img
