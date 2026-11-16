@@ -17,10 +17,10 @@ export default function App() {
 
   return (
     <>
-      <Panel id="hero" index={0} className="bg-gray-100 dark:bg-gray-950" {...shared}>
+      <Panel id="hero" index={0} className="bg-gray-100" {...shared}>
         <Hero />
       </Panel>
-      <Panel id="work" index={1} className="bg-gray-100 dark:bg-gray-950" {...shared}>
+      <Panel id="work" index={1} className="bg-gray-100" {...shared}>
         <WorkExperience />
       </Panel>
       <Panel id="projects" index={2} className="bg-gray-100 text-white" {...shared}>

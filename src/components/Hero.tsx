@@ -14,22 +14,20 @@ const CATCHPHRASE = "Requirements in. Reliable software out.";
 const display = "font-['Bricolage_Grotesque',system-ui,sans-serif]";
 
 const nameGradient =
-  "bg-[linear-gradient(160deg,#059669_0%,#14b8a6_55%,rgba(45,212,191,0.45)_100%)] " +
-  "dark:bg-[linear-gradient(160deg,#34d399_0%,#2dd4bf_55%,rgba(94,234,212,0.45)_100%)]";
+  "bg-[linear-gradient(160deg,#059669_0%,#14b8a6_55%,rgba(45,212,191,0.45)_100%)]";
 
-// Quiet emerald -> teal tint; slightly stronger in dark mode so it doesn't vanish
+// Quiet emerald -> teal tint
 const archFill =
-  "bg-[linear-gradient(180deg,rgba(16,185,129,0.22)_0%,rgba(20,184,166,0.06)_100%)] " +
-  "dark:bg-[linear-gradient(180deg,rgba(52,211,153,0.28)_0%,rgba(45,212,191,0.08)_100%)]";
+  "bg-[linear-gradient(180deg,rgba(16,185,129,0.22)_0%,rgba(20,184,166,0.06)_100%)]";
 
 const socialBtn =
-  "inline-flex size-11 items-center justify-center rounded-full border border-gray-400 transition-colors hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:border-gray-600 dark:hover:bg-gray-800";
+  "inline-flex size-11 items-center justify-center rounded-full border border-gray-400 transition-colors hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600";
 
 const glassBtn =
-  "inline-flex size-11 items-center justify-center rounded-full bg-white/35 shadow-lg shadow-black/10 ring-1 ring-white/60 backdrop-blur-lg backdrop-saturate-150 transition-colors active:bg-white/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:bg-gray-950/30 dark:ring-white/20 dark:active:bg-gray-950/50";
+  "inline-flex size-11 items-center justify-center rounded-full bg-white/35 shadow-lg shadow-black/10 ring-1 ring-white/60 backdrop-blur-lg backdrop-saturate-150 transition-colors active:bg-white/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600";
 
-const githubColor = "text-[#181717] dark:text-white";
-const linkedinColor = "text-[#0A66C2] dark:text-[#70B5F9]";
+const githubColor = "text-[#181717]";
+const linkedinColor = "text-[#0A66C2]";
 
 const GithubIcon = () => (
   <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -69,7 +67,7 @@ export default function Hero({
             className={`${display} ${nameGradient} w-fit bg-clip-text pb-1 text-[clamp(3.5rem,19vw,7rem)] font-extrabold leading-[0.9] tracking-tighter text-transparent md:text-[clamp(5rem,9vw,9rem)]`}
           >
             <span className="flex items-baseline justify-center md:justify-between md:gap-3">
-              <span className="hidden text-[clamp(1.25rem,2.5vw,2.5rem)] font-bold tracking-normal text-gray-900 md:inline dark:text-gray-100">
+              <span className="hidden text-[clamp(1.25rem,2.5vw,2.5rem)] font-bold tracking-normal text-gray-900 md:inline">
                 Hi, I&apos;m
               </span>
               <span>Allen</span>
@@ -80,19 +78,19 @@ export default function Hero({
           {/* Role + story words + catchphrase */}
           <div className="flex flex-col items-center md:mt-5 md:items-start">
             <p
-              className={`${display} mt-5 text-balance text-2xl font-medium leading-tight text-gray-900 dark:text-gray-100 md:mt-0 md:text-5xl`}
+              className={`${display} mt-5 text-balance text-2xl font-medium leading-tight text-gray-900 md:mt-0 md:text-5xl`}
             >
               {role}
             </p>
 
             <ul
               aria-label="How I work"
-              className="mt-4 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-gray-500 md:mt-3 md:text-sm dark:text-gray-400"
+              className="mt-4 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-gray-500 md:mt-3 md:text-sm"
             >
               {STORY.map((word, i) => (
                 <li key={word} className="flex items-center gap-2">
                   {i > 0 && (
-                    <span aria-hidden="true" className="text-gray-400 dark:text-gray-600">
+                    <span aria-hidden="true" className="text-gray-400">
                       •
                     </span>
                   )}
@@ -101,7 +99,7 @@ export default function Hero({
               ))}
             </ul>
 
-            <p className="mt-4 text-base text-gray-600 md:mt-2 md:max-w-md md:text-lg dark:text-gray-400">
+            <p className="mt-4 text-base text-gray-600 md:mt-2 md:max-w-md md:text-lg">
               {CATCHPHRASE}
             </p>
           </div>
@@ -111,7 +109,7 @@ export default function Hero({
             <a
               href={cvHref}
               download
-              className="inline-flex h-12 items-center justify-center rounded-full bg-emerald-700 px-6 text-base font-semibold text-white transition-colors hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:bg-emerald-400 dark:text-gray-950 dark:hover:bg-emerald-300 gap-2"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-emerald-700 px-6 text-base font-semibold text-white transition-colors hover:bg-emerald-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 gap-2"
             >
               <svg
                 aria-hidden="true"
@@ -131,7 +129,7 @@ export default function Hero({
             </a>
             <a
               href={`mailto:${email}?subject=${encodeURIComponent("Hello Allen")}`}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-gray-400 px-6 text-base font-semibold text-gray-900 transition-colors hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800 gap-2"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-gray-400 px-6 text-base font-semibold text-gray-900 transition-colors hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 gap-2"
             >
               <svg
                 aria-hidden="true"

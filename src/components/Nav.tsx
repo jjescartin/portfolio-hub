@@ -14,15 +14,15 @@ const fade = "transition-colors duration-500 ease-out motion-reduce:transition-n
 export default function Nav({ current, onSelect }: NavProps) {
   const dark = SECTIONS[current]?.tone === "dark"
 
-  const allen = dark ? "text-white" : "text-gray-900 dark:text-white"
-  const esc = dark ? "text-teal-400" : "text-teal-700 dark:text-teal-400"
-  const linkActive = dark ? "text-teal-400 bg-gray-700" : "text-teal-700 dark:text-teal-400 bg-gray-200"
+  const allen = dark ? "text-white" : "text-gray-900"
+  const esc = dark ? "text-teal-400" : "text-teal-700"
+  const linkActive = dark ? "text-teal-400 bg-gray-700" : "text-teal-700 bg-gray-200"
   const linkIdle = dark
     ? "text-white/60 hover:text-white"
-    : "text-gray-900/60 hover:text-gray-900 dark:text-white/60 dark:hover:text-white"
+    : "text-gray-900/60 hover:text-gray-900"
   const bar = dark
     ? "bg-neutral-900/90 shadow-lg shadow-black/40"
-    : "bg-white/90 shadow-sm shadow-gray-900/10 dark:bg-gray-900/90 dark:shadow-black/40"
+    : "bg-white/90 shadow-sm shadow-gray-900/10"
 
   return (
     <header
